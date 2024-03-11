@@ -86,7 +86,7 @@ const projects = [
 
 <script>
   import("gsap").then((gsap) => {
-    const projects = gsap.gsap.utils.toArray(".projects");
+    const projects = gsap.gsap.utils.toArray(".projects") as HTMLElement[];
     let totalWidth = 0;
     projects.forEach((project) => {
       totalWidth += project.offsetWidth;
