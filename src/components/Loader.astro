@@ -1,0 +1,48 @@
+---
+import { Logo } from "../assets/svg";
+---
+
+<section
+  class="loader w-[100vw] h-[100vh] fixed inset-0 bg-darkBg z-50 flex justify-center"
+>
+  <div class="h-full flex flex-col justify-center items-center overflow-hidden">
+    <h1
+      class="loader-image text-9xl font-bold text-white overflow-hidden"
+    >
+      R
+    </h1>
+    <div class="progress mt-6"></div>
+  </div>
+</section>
+
+<style>
+  .progress {
+    height: 4.5px;
+    width: 145.6px;
+    background: linear-gradient(#d6d6d6 0 0), linear-gradient(#d6d6d6 0 0),
+      #7c7c7c;
+    background-size: 60% 100%;
+    background-repeat: no-repeat;
+    animation: progress-7x9cg2 3s infinite;
+  }
+
+  @keyframes progress-7x9cg2 {
+    0% {
+      background-position:
+        -150% 0,
+        -150% 0;
+    }
+
+    66% {
+      background-position:
+        250% 0,
+        -150% 0;
+    }
+
+    100% {
+      background-position:
+        250% 0,
+        250% 0;
+    }
+  }
+</style>
