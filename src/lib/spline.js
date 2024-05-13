@@ -1,17 +1,33 @@
-import { gsap } from 'gsap';
-import { Application } from '@splinetool/runtime';
-const canvas = document.getElementById('canvas3d');
-const app = new Application(canvas);
+import createGlobe from "cobe";
 
+let phi = 0;
+let canvas = document.getElementById("cobe");
 
-app.load('https://prod.spline.design/HQyOua88qBDkGune/scene.splinecode').then(() => {
-    const sphere = app.findObjectByName('Sphere');
-    gsap.set(sphere.scale, { x: 2, y: 2, z: 2 });
-    canvas.style.filter = 'blur(100px)';
-    gsap.to(canvas, {
-        autoAlpha: 1,
-        duration: 4,
-        delay: 5,
-    })
-})
-
+let width = window.innerWidth;
+window.document.addEventListener("DOMContentLoaded", () => {
+  const globe = createGlobe(canvas, {
+    devicePixelRatio: 2,
+    width: 1000,
+    height: 1000,
+    phi: 0,
+    theta: 0,
+    dark: 1,
+    diffuse: 1.2,
+    scale: (width < 768) ? 0.7 : 1.0,
+    mapSamples: 16000,
+    mapBrightness: 6,
+    baseColor: [0.3, 0.3, 0.3],
+    markerColor: [0.5, 0.5, 0.5],
+    glowColor: [0.5, 0.5, 0.5],
+    offset: [0, 0],
+    markers: [{ location: [20.5937, 78.9629], size: 0.1 }],
+    onRender: (state) => {
+      if (width < 768) {
+        state.phi = 0;
+        return;
+      }
+      state.phi = phi;
+      phi += 0.001;
+    },
+  });
+});

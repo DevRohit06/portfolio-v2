@@ -86,22 +86,6 @@ const projects = [
 
 <script>
   import("gsap").then((gsap) => {
-    const projects = gsap.gsap.utils.toArray(".projects") as HTMLElement[];
-    let totalWidth = 0;
-    projects.forEach((project) => {
-      totalWidth += project.offsetWidth;
-    });
-
-    gsap.gsap.to(".pin-wrap", {
-      x: -totalWidth + window.innerWidth / 2, // Scroll to the end of the container
-      scrollTrigger: {
-        trigger: ".project-section",
-        scrub: 1,
-        pin: true,
-        end: () => `+=${totalWidth}`, // End after scrolling the width of the container
-        invalidateOnRefresh: true,
-        anticipatePin: 1,
-      },
-    });
+   
   });
 </script>

@@ -18,16 +18,6 @@ export default {
 				dmSerif: 'DM Serif Text, serif',
 				poppins: 'Poppins, sans-serif',
 			},
-			animation: {
-				marquee: "marquee var(--duration, 30s) linear infinite",
-				marqueeReverse: "marquee var(--duration, 30s) linear infinite reverse",
-			},
-			keyframes: {
-				marquee: {
-					to: { transform: "translateX(-50%)" },
-				},
-			},
-
 		},
 	},
 	plugins: [

@@ -1,0 +1,65 @@
+---
+import data from "../data/experience.json";
+---
+
+<section class="w-11/12 mx-auto">
+  <div class="text-white font-poppins">
+    <div class="text-6xl font-normal opacity-50">Experience</div>
+    <div></div>
+  </div>
+
+  <div class="mt-16">
+    {
+      data.map((item, index) => {
+        return (
+          <div class="role-div">
+            <div class="flex sm:justify-between sm:flex-row flex-col w-full sm:items-center transition-all cursor-pointer">
+              <div class="w-full">
+                <div
+                  class="relative role-text text-4xl font-medium  text-white w-full overflow-hidden "
+                  data-role={item.role}
+                >
+                  <div>{item.role}</div>
+                </div>
+                <div class="text-white  opacity-50 mt-2">{item.company}</div>
+              </div>
+              <div class="sm:flex flex-col sm:items-end items-start min-w-max">
+                <div class="text-white opacity-50 w-fit">{item.dates}</div>
+                <div class="text-white opacity-50">{item.location}</div>
+              </div>
+            </div>
+            <hr class="my-10 opacity-25" />
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .role-text:before {
+    content: attr(data-role);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .role-div:hover .role-text:before {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .role-text div {
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .role-div:hover .role-text div {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+</style>

@@ -1,6 +1,8 @@
 ---
 import Play from "../assets/images/play.png";
 import Badge from "../components/ui/Badge.astro";
+import { Image } from "astro:assets"
+import rohit from "../assets/images/rohit.webp"
 const mainStacks = [
   "Javascript",
   "Typescript",
@@ -32,176 +34,105 @@ const knowledge = [
 const languages = ["Hindi", "English"];
 ---
 
-<section class="my-52 2xl:w-4/6 lg:px-16 px-8 mx-auto">
-  <div
-    class="about-1 border border-white/5 bg-white/5 mx-auto pt-20 pb-8 overflow-hidden rounded-[25px] relative"
-  >
+<section class="my-52 2xl:w-11/12 lg:px-16 px-8 mx-auto font-poppins">
+  <div class="mb-8 flex gap-8 sm:flex-row flex-col-reverse">
     <div
-      class="absolute inset-0 bg-grid-white/10 bg-grid-16 [mask-image:linear-gradient(180deg,black,transparent)]"
+      class="about-1 border border-white/5 bg-white/5 mx-auto pt-10 pb-8 overflow-hidden rounded-[25px] relative px-8"
     >
-    </div>
-    <div
-      class="absolute bg-gradient-to-r from-black via-transparent to-black z-10 opacity-25 inset-0 w-full"
-    >
-    </div>
-    <div class="w-5/6 mx-auto text-white">
-      <p
-        class="text-white w-11/12 mx-auto text-center md:text-5xl text-3xl font-poppins font-bold"
+      <div
+        class="absolute inset-0 bg-grid-white/10 bg-grid-16 [mask-image:linear-gradient(180deg,black,transparent)]"
       >
-        I'm just a tech enthusiast who loves to design and code things for the
-        web.
-      </p>
+      </div>
+      <div>
+        <div class="text-white font-semibold text-5xl font-poppins">
+          Rohit Kushwaha
+        </div>
+        <b
+          class="text-2xl font-poppins text-transparent bg-clip-text bg-[linear-gradient(90deg,#00C9FF_0%,#92FE9D_100%)] font-bold"
+        >
+          Full Stack Developer
+        </b>
+        <div>
+          <p class="text-white/50 mt-4 text-lg font-poppins">
+            <!-- I'm a dedicated Full Stack Developer based in India, specializing in developing complex, scalable web applications. With a deep understanding of both front-end and back-end technologies, I am able to craft robust solutions from the ground up - from database design to user interface development. I have a particular passion for creating dynamic user experiences, utilizing UI effects and animations to bring designs to life. My goal is to build intuitive, efficient, and impactful digital experiences. Let's collaborate and create something exceptional. -->
+            Hi, I'm Rohit Kushwaha, a passionate Full Stack Developer with expertise
+            in cutting-edge web technologies. Currently pursuing a BSc in Computer
+            Science, I bring a dynamic blend of theoretical knowledge and hands-on
+            experience to the world of software development.
+          </p>
+        </div>
+      </div>
     </div>
-    <p
-      class="text-white/50 mt-8 font-semibold font-poppins text-center md:text-3xl text-xl"
-    >
-      Things i work with..
-    </p>
-    <div class="w-full relative">
-      <div class="w-full flex gap-6 mt-4 animate-marquee text-white/80">
-        {
-          [...mainStacks, ...mainStacks.reverse(), ...mainStacks].map(
-            (stack) => <Badge text={stack} />,
-          )
-        }
-      </div>
-      <div class="w-full flex gap-6 mt-4 animate-marqueeReverse text-white/80">
-        {
-          [...knowledge.reverse(), ...knowledge, ...knowledge.reverse()].map(
-            (stack) => <Badge text={stack} />,
-          )
-        }
-      </div>
+    <div class="about-1-image">
+      <Image
+        class="rounded-[25px]"
+        src={rohit}
+        alt="Rohit Kushwaha"
+      />
     </div>
   </div>
-  <div class="grid lg:grid-cols-2 grid-cols-1 w-full mt-8 gap-8">
+  <div>
     <div
-      class="about-2 border w-full border-white/5 bg-white/5 mx-auto p-10 overflow-hidden rounded-[25px] relative"
+      class="border border-white/5 bg-white/5 mx-auto pt-10 pb-8 overflow-hidden rounded-[25px] relative px-8"
     >
       <div
         class="absolute inset-0 bg-grid-white/10 bg-grid-16 [mask-image:linear-gradient(180deg,black,transparent)]"
       >
       </div>
-      <p class="text-3xl text-white font-bold">Experience</p>
-      <p class="text-white/50 text-lg font-poppins mt-4">
-        I have been working with web technologies for the past 3 years and have
-        been a part of a few projects. I have also worked as a FullStack
-        Developer at Qbtrix Innovations and have been a part of a few projects.
-      </p>
-      <div class="mt-4">
-        <div class="bg-white/5 border border-white/5 px-4 w-full rounded-xl">
-          <div class="flex gap-4 items-center py-4">
-            <!-- <img src="" alt=""> -->
-            <div
-              class="size-14 bg-white rounded-xl flex items-center justify-center text-4xl font-bold font-poppins"
-            >
-              Q
-            </div>
-            <div class="flex flex-col">
-              <p class="text-white/80 text-lg font-bold">
-                FullStack Developer At Qbtrix Innovations
-              </p>
-              <p class="text-white/50 text-lg font-bold">Dec 2023 - Feb 2024</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="about-3 border w-full border-white/5 bg-white/5 mx-auto p-10 overflow-hidden rounded-[25px] relative"
-    >
-      <div
-        class="absolute inset-0 bg-grid-white/10 bg-grid-16 [mask-image:linear-gradient(180deg,black,transparent)]"
-      >
-      </div>
-      <p class="text-3xl text-white font-bold">Education</p>
       <div>
-        <p class="text-white/50 text-lg font-poppins mt-4">
-          I am currently pursuing my Bachelors in Computer Science and have been
-          learning and working with web technologies for the past 3 years.
-          Explored a lot of things in field of web technologies.
-        </p>
-        <div class="mt-4">
-          <div class="bg-white/5 border border-white/5 px-4 w-full rounded-xl">
-            <div class="flex gap-4 items-center py-4">
-              <img
-                class="size-14 rounded-xl"
-                src="https://www.chmcollege.in/wp-content/uploads/2019/10/CHM-favicon-logo.png"
-                alt=""
-              />
-
-              <div class="flex flex-col">
-                <p class="text-white/80 text-lg font-bold">
-                  Bachelors in Computer Science at CHM College
-                </p>
-                <p class="text-white/50 text-lg font-bold">2023 - 2026</p>
-              </div>
-            </div>
-          </div>
+        <div class="text-white font-semibold text-3xl font-poppins">
+          My Skills
         </div>
-      </div>
+        <div class="flex flex-wrap gap-4 mt-4">
+         {mainStacks.map((stack) => (
+            <p class=" text-white/50">{stack}</p>
+          ))}
+        </div>
     </div>
   </div>
 </section>
 
 <script>
-  import("gsap").then(( gsap ) => {
+  import("gsap").then((gsap) => {
     gsap.gsap.fromTo(
-    ".about-1",
-    {
-      x: "-1000px",
-    },
-    {
-      autoAlpha: 1,
-      x: 0,
-      duration: 1,
-      overflow: "hidden",
-      scrollTrigger: {
-        trigger: ".about-1",
-        start: "top bottom",
-        end: "center center",
-        scrub: 1,
-        invalidateOnRefresh: true,
+      ".about-1",
+      {
+        x: "-100px",
+        autoAlpha: 0,
       },
-    },
-  );
-
-  gsap.gsap.fromTo(
-    ".about-2",
-    {
-      x: "-1000px",
-    },
-    {
-      autoAlpha: 1,
-      x: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".about-2",
-        start: "top bottom",
-        end: "center center",
-        scrub: 1,
-        invalidateOnRefresh: true,
+      {
+        autoAlpha: 1,
+        x: 0,
+        duration: 1,
+        overflow: "hidden",
+        scrollTrigger: {
+          trigger: ".about-1",
+          start: "top bottom",
+          end: "center center",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      }
+    );
+    gsap.gsap.fromTo(
+      ".about-1-image",
+      {
+        x: "100px",
+        autoAlpha: 0,
       },
-    },
-  );
-  gsap.gsap.fromTo(
-    ".about-3",
-    {
-      x: "1000px",
-    },
-    {
-      autoAlpha: 1,
-      x: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".about-2",
-        start: "top bottom",
-        end: "center center",
-        scrub: 1,
-        invalidateOnRefresh: true,
-      },
-    },
-  );
+      {
+        autoAlpha: 1,
+        x: 0,
+        duration: 1,
+        overflow: "hidden",
+        scrollTrigger: {
+          trigger: ".about-1",
+          start: "top bottom",
+          end: "center center",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      }
+    );
   });
-
 </script>

@@ -1,16 +1,6 @@
 ---
-const { title, description } = Astro.props;
 import Loader from "../components/Loader.astro";
-import "@fontsource/dm-serif-text";
-import "@fontsource/poppins/100.css";
-import "@fontsource/poppins/200.css";
-import "@fontsource/poppins/300.css";
-import "@fontsource/poppins/400.css";
-import "@fontsource/poppins/500.css";
-import "@fontsource/poppins/600.css";
-import "@fontsource/poppins/700.css";
-import "@fontsource/poppins/800.css";
-import "@fontsource/poppins/900.css";
+import Head from "../components/Head.astro";
 ---
 
 <html lang="en">
@@ -18,20 +8,37 @@ import "@fontsource/poppins/900.css";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-  </head>
-  <title>{title}</title>
+    <Head
+      title="Rohit Kushwaha - Fullstack Developer"
+      description="portfolio website"
+    />
+    <title></title></head
+  >
 
   <body class="relative">
     <Loader />
     <main class="relative overflow-hidden">
       <slot />
     </main>
-  </body>
-</html>
+  </body><style is:global>
+    body {
+      @apply bg-darkBg;
+    }
+    ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      @apply bg-darkBg
+    }
 
-<style is:global>
-  body {
-    @apply bg-darkBg;
-  }
-</style>
+    ::-webkit-scrollbar {
+      width: 12px;
+      @apply bg-darkBg
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #555;
+    }
+  </style>
+</html>
